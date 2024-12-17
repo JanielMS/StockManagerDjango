@@ -1,0 +1,20 @@
+{% extends "estoque/base.html" %}
+{% load static %}
+
+{% block titulo %}
+Vizualiar Produto
+{% endblock titulo %}
+
+{% block conteudo %}
+<h1 class="page-title section">Vizualiar Produto</h1>
+
+<div class="produto-detail">
+        <h2>{{ produto.nome }}</h2>
+        <p><b>Data de Criação</b> {{produto.data_criacao}}</p>
+        <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+        <p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+        <p><strong>Quantidade em estoque:</strong> {{ produto.quantidade }}</p>
+        
+        <a href="{% url 'listar-produtos' %}">Voltar para lista de produtos</a>
+    </div>
+{% endblock conteudo %}

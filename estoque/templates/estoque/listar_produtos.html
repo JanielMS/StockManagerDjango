@@ -1,0 +1,53 @@
+{% extends "estoque/base.html" %}
+
+{% load static %}
+{% block titulo %}
+Inicio - Listar Produtos
+{% endblock titulo %}
+
+{% block conteudo %}
+<h1 class="page_title section">Todos os Produtos</h1>
+
+<div class="totais">
+        <p><strong>Produtos em Estoque</strong> <span>{{ total_produtos }}</span></p>
+        <p><strong>Valor em Estoque</strong> <span>R$ {{ valor_total_estoque|floatformat:2 }}</span></p>
+</div>
+
+{% if produtos %}
+<div class="table-wrapper">
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Detalhes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.descricao }}</td>
+                <td>{{ produto.preco }}</td>
+                <td>{{ produto.quantidade }}</td>
+                 <td>
+                <a href="{% url 'visualizar-produto' produto.pk %}" class="btn-view"><i class="ri-list-view"></i> Ver Detalhes</a>
+            </td>
+                <td>
+                    <a href="{% url 'editar-produto' produto.pk %}" class="btn-edit"><i class="ri-edit-fill"></i>  Editar</a>
+                    <a href="{% url 'excluir-produto' produto.pk %}" class="btn-delete"><i class="ri-delete-bin-5-fill">  Excluir</i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% else %}
+<p class="text"><i class="ri-box-3-fill"></i>Nenhum Produto Cadastrado!</p>
+
+{% endif %}
+{% endblock conteudo %}

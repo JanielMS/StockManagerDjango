@@ -1,0 +1,19 @@
+{% extends "estoque/base.html" %}
+{% load static %}
+
+{% block titulo %}
+Cadastrar Produtos
+{% endblock titulo %}
+
+{% block conteudo %}
+<h1 class="page-title section">Cadastrar Produto</h1>
+
+<form method="post" class="form-create">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div>
+        <button type="submit" class="btn"><i class="ri-save-2-fill"></i> Salvar</button>
+        <a href="{% url 'listar-produtos' %}" class='btn-secundary'>Voltar</a>
+    </div>
+</form>
+{% endblock conteudo %}

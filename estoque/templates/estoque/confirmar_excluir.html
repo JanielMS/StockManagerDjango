@@ -1,0 +1,20 @@
+{% extends "estoque/base.html" %}
+{% load static %}
+
+{% block titulo %}
+Excluir Produto
+{% endblock titulo %}
+
+{% block conteudo %}
+<h1 class="page-title">Excluir Produto</h1>
+
+<form method="post" class="form-create">
+    {% csrf_token %}
+    <h2 class="subheader">Deseja excluir <b>permanentimente</b> o produto "{{produto.nome}}"?</h2>
+    {{form.as_p}}
+    <div>
+        <button type="submit" class="btn">Salvar</button>
+        <a href="{% url 'listar-produtos' %}" class='btn-secundary'>Voltar</a>
+    </div>
+</form>
+{% endblock conteudo %}
