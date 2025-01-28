@@ -1,7 +1,4 @@
-Segue o modelo de README para o projeto Django `stockManagerDjango`:
-
-```markdown
-# stockManagerDjango
+# StockManagerDjango
 
 Projeto Django para gerenciamento de estoque.
 
@@ -25,9 +22,9 @@ Certifique-se de que você tenha as seguintes ferramentas instaladas em seu ambi
 2. **Crie um ambiente virtual (opcional, mas recomendado):**
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate # Linux/macOS
-   venv\Scripts\activate    # Windows
+   python -m venv env
+   source env/bin/activate # Linux/macOS
+   env\Scripts\activate    # Windows
    ```
 
 3. **Instale as dependências:**
