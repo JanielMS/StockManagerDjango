@@ -18,6 +18,15 @@
         <div class="header_logo">
             <a href="{% url 'listar-produtos'  %}" class="logo">Stock<span>Manager</span>.</a>
         </div>
+        <div class='user-config'>
+            {% if user.is_authenticated %}
+                <p>Olá, {{ user.username }}!</p>
+                <a href="{% url 'logout' %}">Sair</a>
+            {%else%}
+                <p>Usuário não Cadastrado!</p>
+                <a href="{% url 'logout' %}">Sair</a>
+            {% endif %}
+        </div>
     </header>
     <nav>
         <ul class="nav_listMenu section">

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 :root{
     --primary-color: #3c5de2;
     --primary-color-dark: #3651bd;
@@ -56,6 +55,9 @@ header{
     width: 100%;
     padding-inline: 1.2rem;
     padding-block: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 header .logo{
     font-size: 2.8rem;
@@ -69,6 +71,16 @@ header .logo span{
     font-size: 2.5rem;
 }
 
+header .user-config{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+header .user-config a{
+    border-bottom: 2px solid var(--primary-color-dark);
+    padding: 0 .2rem .2rem 0.2rem;
+}
 nav{
     width: 100%;
 }
